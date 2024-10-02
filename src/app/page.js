@@ -1,94 +1,89 @@
-import Image from "next/image";
+"use client";
+import React from "react";
 import styles from "./page.module.css";
-
+import Lottie from "lottie-react";
+import birthdayAnimation from "./lotties/birthday-animations";
+import paintBrush from "./lotties/paint-brush";
+import foodIcon from "./lotties/food-and-drinks.json";
 export default function Home() {
   return (
     <div className={styles.page}>
       <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="https://nextjs.org/icons/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
+        <Lottie
+          animationData={birthdayAnimation}
+          loop={true}
+          style={{
+            width: "400px",
+            height: "400px",
+            trigger: "loop-on-hover",
+            "margin-left": "auto",
+            "margin-right": "auto",
+          }}
         />
-        <ol>
-          <li>
-            Get started by editing <code>src/app/page.js</code>.
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="https://nextjs.org/icons/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
+        <h1>You are invited to Mia Le's birthday party!</h1>
+        <h3>In this party, we will: </h3>
+        <div>
+          <ol>
+            <Lottie
+              animationData={paintBrush}
+              loop={true}
+              style={{
+                width: "40px",
+                height: "40px",
+                trigger: "loop-on-hover",
+                "margin-left": "auto",
+                "margin-right": "auto",
+              }}
             />
-            Deploy now
-          </a>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.secondary}
-          >
-            Read our docs
-          </a>
+            Paint your own keychain!
+          </ol>
+        </div>
+        <div>
+          <ol>
+            <Lottie
+              animationData={foodIcon}
+              loop={true}
+              style={{
+                width: "40px",
+                height: "40px",
+                trigger: "loop-on-hover",
+                "margin-left": "auto",
+                "margin-right": "auto",
+              }}
+            />
+            Have some snacks & drinks
+          </ol>
         </div>
       </main>
       <footer className={styles.footer}>
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+        <div className={styles.row}>
+          <div className={styles.column1}>
+            <h4>When?</h4>
+            <ol>November 2nd, 2024 14:00 - 18:00</ol>
+            <a
+              href="https://calendar.app.google/9oX1pMw3dhoMVUjS8"
+              target="_blank"
+            >
+              Add to Google Calendar
+            </a>
+          </div>
+          <div className={styles.column2}>
+            <h4>Where?</h4>
+            <a href="https://maps.app.goo.gl/3Hh1WPco55Weekbw8" target="_blank">
+              Kyyhkysmäki 2, 02650 Espoo
+            </a>
+          </div>
+          <div className={styles.column3}>
+            <h4>Gift ideas?</h4>
+            <a
+              href="https://mywishlist.online/w/qc8nie/mias-wishlist"
+              target="_blank"
+            >
+              View my online wishlist here
+            </a>
+            <ol>List has been sorted from cheapest item to most expensive</ol>
+          </div>
+        </div>
       </footer>
     </div>
   );
