@@ -13,8 +13,8 @@ export default function Home() {
           animationData={birthdayAnimation}
           loop={true}
           style={{
-            width: "400px",
-            height: "400px",
+            width: "350px",
+            height: "350px",
             trigger: "loop-on-hover",
             "margin-left": "auto",
             "margin-right": "auto",
